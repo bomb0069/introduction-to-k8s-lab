@@ -1,0 +1,36 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-web-ingress
+  namespace: dev-environment
+spec:
+  rules:
+  - host: "dev.my-env.com"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: my-web-service
+            port:
+              number: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-web-ingress
+  namespace: uat-environment
+spec:
+  rules:
+  - host: "uat.my-env.com"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: my-web-service
+            port:
+              number: 80
+---
