@@ -25,6 +25,8 @@
 
 ## Start
 
+### Run
+
 ```shell
 kubectl apply -f 01-simple-nodeport.yaml 
 
@@ -41,6 +43,18 @@ my-web-deployment-b6876bb6b-mwn6n   1/1     Running             0          4s
 ```
 
 wait until it all running (Break with `Ctrl + C`)
+
+### Check Service
+
+```shell
+$ kubectl get service -o wide
+
+NAME             TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE   SELECTOR
+kubernetes       ClusterIP   10.43.0.1       <none>        443/TCP        53s   <none>
+my-web-service   NodePort    10.43.212.126   <none>        80:30080/TCP   22s   app=my-web
+```
+
+### Check Result
 
 open browser with http://localhost:8888
 open browser with http://localhost:30080
