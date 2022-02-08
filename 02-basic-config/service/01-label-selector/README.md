@@ -112,7 +112,7 @@ Events:            <none>
 ## Clear
 
 ```shell
-$ kubectl delete -f missing.yaml     
+$ kubectl delete -f simple.yaml     
 
 deployment.apps "my-web-deployment" deleted
 ```
