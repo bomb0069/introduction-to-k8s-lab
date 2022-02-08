@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-web-deployment
+  labels:
+    app: my-web-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: my-web
+  template:
+    metadata:
+      labels:
+        app: my-web
+    spec:
+      containers:
+      - image: nginx
+        name: my-web-on-nginx
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-web-service
+spec:
+  selector:
+    app: my-web
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
