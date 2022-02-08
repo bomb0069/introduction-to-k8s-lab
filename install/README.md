@@ -33,3 +33,9 @@ Start a new PowerShell instance (doesn’t need to be administrative this time a
 ```shell
 k3d cluster create localk8s
 ```
+
+try to create cluster for this workshop
+
+```shell
+k3d cluster create my-cluster --servers 1 --agents 3 --port "8888:80@loadbalancer" --port "8889:443@loadbalancer"
+```
