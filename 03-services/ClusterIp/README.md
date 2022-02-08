@@ -24,7 +24,7 @@ wait until it all running (Break with `Ctrl + C`)
 
 open browser with http://localhost:8888
 
-### Get Service
+### Check Service Information
 
 ```shell
 $ kubectl get service
@@ -72,6 +72,17 @@ my-https-deployment-77b87fcb7d-spvv5   1/1     Running             0          4s
 wait until it all running (Break with `Ctrl + C`)
 
 open browser with http://localhost:8888 and try to refesh
+
+
+### Check Service Information
+
+```shell
+$ kubectl get service
+
+NAME             TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)   AGE
+kubernetes       ClusterIP   10.43.0.1      <none>        443/TCP   2m37s
+my-web-service   ClusterIP   10.43.25.152   <none>        80/TCP    46s
+```
 
 ### Clear
 
