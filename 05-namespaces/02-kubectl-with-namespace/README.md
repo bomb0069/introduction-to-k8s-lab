@@ -117,8 +117,8 @@ http://dev.my-env.com and http://uat.my-env.com
 delete workshop's namespace
 
 ```shell
-$ kubectl delete -f diff-2-namespaces.yaml
-
-namespace "my-dev-namespace" deleted
+$ kubectl delete -f kubectl delete -f diff-2-environment.yaml
+ 
+namespace "dev-environment" deleted
 namespace "uat-environment" deleted
 ```
