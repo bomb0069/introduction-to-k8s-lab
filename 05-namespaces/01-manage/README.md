@@ -123,7 +123,7 @@ namespace "manual-namespace" deleted
 ```shell
 $ kubectl delete -f my-namespace.yaml
 
-amespace "my-namespace" deleted
+namespace "my-namespace" deleted
 ```
 
 can't delete `default` namespaces
