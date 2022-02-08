@@ -89,8 +89,7 @@ sudo vi /etc/hosts
 
 ## Try to open browser
 
-http://dev.my-env.com
-http://uat.my-env.com
+http://dev.my-env.com and http://uat.my-env.com
 
 ## Upgrade Dev to version 2.0
 
@@ -111,8 +110,7 @@ my-web-deployment-85454d7c4-trrp9   1/1     Running   0          37s
 
 ## Try to open browser
 
-http://dev.my-env.com
-http://uat.my-env.com
+http://dev.my-env.com and http://uat.my-env.com
 
 ## Clear
 
