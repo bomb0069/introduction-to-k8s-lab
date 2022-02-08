@@ -88,6 +88,30 @@ kube-system   svclb-traefik-bbfjv                       2/2     Running     0   
 kube-system   traefik-55fdc6d984-wfktl                  1/1     Running     0          6m25s
 ```
 
+## Setting the namespace preference
+
+```shell
+$ kubectl config set-context --current --namespace=manual-namespace
+
+Context "k3d-my-cluster" modified.
+
+$ kubectl get pod                                                  
+No resources found in manual-namespace namespace.
+
+```
+
+`Important :` switch back to `default` namespace
+
+```shell
+$ kubectl config set-context --current --namespace=default
+
+Context "k3d-my-cluster" modified.
+
+$ kubectl get pod
+
+No resources found in default namespace.
+```
+
 ## Delete Namepace
 
 ```shell
