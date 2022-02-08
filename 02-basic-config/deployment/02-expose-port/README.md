@@ -53,6 +53,46 @@ replicaset.apps/nginx-deployment-64bd7b69c    1         1         1       2s    
 replicaset.apps/nginx-deployment-66b6c48dd5   0         0         0       118s   nginx        nginx:1.14.2   app=nginx,pod-template-hash=66b6c48dd5
 ```
 
+describe deployment to see change log
+
+```shell
+$ kubectl describe deployment nginx-deployment
+
+Name:                   nginx-deployment
+Namespace:              default
+CreationTimestamp:      Tue, 08 Feb 2022 22:32:12 +0700
+Labels:                 <none>
+Annotations:            deployment.kubernetes.io/revision: 2
+Selector:               app=nginx
+Replicas:               1 desired | 1 updated | 1 total | 1 available | 0 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  25% max unavailable, 25% max surge
+Pod Template:
+  Labels:  app=nginx
+  Containers:
+   nginx:
+    Image:        nginx:1.14.2
+    Port:         8080/TCP
+    Host Port:    0/TCP
+    Environment:  <none>
+    Mounts:       <none>
+  Volumes:        <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Available      True    MinimumReplicasAvailable
+  Progressing    True    NewReplicaSetAvailable
+OldReplicaSets:  <none>
+NewReplicaSet:   nginx-deployment-64bd7b69c (1/1 replicas created)
+Events:
+  Type    Reason             Age    From                   Message
+  ----    ------             ----   ----                   -------
+  Normal  ScalingReplicaSet  7m10s  deployment-controller  Scaled up replica set nginx-deployment-66b6c48dd5 to 1
+  Normal  ScalingReplicaSet  5m14s  deployment-controller  Scaled up replica set nginx-deployment-64bd7b69c to 1
+  Normal  ScalingReplicaSet  5m14s  deployment-controller  Scaled down replica set nginx-deployment-66b6c48dd5 to 0
+```
+
 describe pod
 
 ```shell
