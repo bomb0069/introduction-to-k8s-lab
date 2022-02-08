@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: my-dev-namespace
+  labels:
+    name: my-dev-namespace
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: my-uat-namespace
+  labels:
+    name: my-uat-namespace
