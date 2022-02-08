@@ -29,7 +29,6 @@
 
 ```shell
 kubectl apply -f 01-simple-nodeport.yaml 
-
 ```
 
 ```shell
@@ -52,6 +51,28 @@ $ kubectl get service -o wide
 NAME             TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE   SELECTOR
 kubernetes       ClusterIP   10.43.0.1       <none>        443/TCP        53s   <none>
 my-web-service   NodePort    10.43.212.126   <none>        80:30080/TCP   22s   app=my-web
+```
+
+```shell
+$ kubectl describe service my-web-service
+
+Name:                     my-web-service
+Namespace:                default
+Labels:                   <none>
+Annotations:              <none>
+Selector:                 app=my-web
+Type:                     NodePort
+IP Family Policy:         SingleStack
+IP Families:              IPv4
+IP:                       10.43.222.206
+IPs:                      10.43.222.206
+Port:                     <unset>  80/TCP
+TargetPort:               80/TCP
+NodePort:                 <unset>  30080/TCP
+Endpoints:                10.42.0.4:80,10.42.2.3:80
+Session Affinity:         None
+External Traffic Policy:  Cluster
+Events:                   <none>
 ```
 
 ### Check Result
