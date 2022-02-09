@@ -5,7 +5,7 @@
 create 2 difference namespaces
 
 ```shell
-$ kubectl apply -f diff-2-namespaces.yaml 
+$ kubectl apply -f diff-2-environment.yaml
 
 namespace/dev-environment created
 namespace/uat-environment created
